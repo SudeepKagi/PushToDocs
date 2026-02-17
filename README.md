@@ -2,28 +2,27 @@
 ================
 
 ## Project Title
-PushToDocs is an innovative solution designed to streamline documentation generation, making it easier for developers to maintain up-to-date and accurate documentation for their projects.
+PushToDocs is an innovative tool designed to simplify the process of generating and maintaining high-quality documentation for software projects.
 
 ## Description
-PushToDocs is a cutting-edge tool that automates the process of generating high-quality documentation. With its advanced features and user-friendly interface, PushToDocs aims to revolutionize the way developers approach documentation, saving time and effort while ensuring consistency and accuracy.
+PushToDocs is a cutting-edge solution that automates the creation and update of documentation, ensuring that your project's docs are always up-to-date and accurate. This repository contains the source code for PushToDocs, which leverages advanced algorithms to generate professional-grade documentation with minimal user input.
 
 ## Features
-* Automated documentation generation
+* Automatic generation of README files
 * Support for multiple documentation formats
-* Customizable templates and layouts
+* Customizable templates and styles
 * Integration with popular version control systems
-* Real-time updates and synchronization
+* User-friendly interface for easy configuration
 
 ## Installation
 To get started with PushToDocs, follow these steps:
 1. Clone the repository: `git clone https://github.com/SudeepKagi/PushToDocs.git`
 2. Install dependencies: `npm install`
-3. Configure the tool according to your needs
+3. Configure the tool: `npm run config`
 
 ## Usage
-1. Initialize PushToDocs: `npm run init`
-2. Generate documentation: `npm run generate`
-3. Customize and refine your documentation as needed
+1. Run the tool: `npm run generate`
+2. Review and customize the generated documentation as needed
 
 ## Tech Stack
 * Node.js
@@ -32,10 +31,10 @@ To get started with PushToDocs, follow these steps:
 * Git
 
 ## Contributing
-We welcome contributions from the community to help improve and expand PushToDocs. To contribute, please:
+We welcome contributions to PushToDocs! If you're interested in contributing, please:
 1. Fork the repository
-2. Create a new branch: `git checkout -b feature/your-feature`
-3. Commit your changes: `git commit -m "your commit message"`
+2. Create a new branch: `git checkout -b my-feature`
+3. Commit your changes: `git commit -m "my feature"`
 4. Open a pull request
 
 ## License
