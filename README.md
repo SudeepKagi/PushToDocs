@@ -1,41 +1,41 @@
 # PushToDocs
-=====================================
+## Automated Documentation Generator
 
-## Project Title
-PushToDocs is an innovative tool designed to streamline documentation generation for software projects.
+PushToDocs is a revolutionary tool designed to simplify the process of generating high-quality documentation for your projects. With its cutting-edge technology, PushToDocs automates the tedious task of creating and updating documentation, saving you time and effort.
 
-## Description
-PushToDocs is a cutting-edge solution that automates the process of creating and updating documentation for GitHub repositories. By leveraging advanced algorithms and natural language processing, PushToDocs simplifies the documentation process, saving developers time and effort.
+### Description
+PushToDocs utilizes advanced algorithms to analyze your codebase and generate comprehensive documentation. This includes class diagrams, method explanations, and example use cases. The generated documentation is clear, concise, and easy to understand, making it perfect for developers, contributors, and end-users alike.
 
-## Features
+### Features
 * Automated documentation generation
-* Support for multiple documentation formats
-* Integration with GitHub repositories
-* Customizable templates and settings
-* User-friendly interface
+* Support for multiple programming languages
+* Customizable templates and styling
+* Integration with popular version control systems
+* Real-time updates and synchronization
 
-## Installation
-To get started with PushToDocs, follow these steps:
+### Installation
+To get started with PushToDocs, follow these simple steps:
 1. Clone the repository: `git clone https://github.com/SudeepKagi/PushToDocs.git`
 2. Install dependencies: `npm install`
-3. Configure settings: update the `config.json` file with your repository details
+3. Configure your project settings: `npm run config`
 
-## Usage
-1. Run the documentation generator: `npm run generate-docs`
-2. Review and customize the generated documentation
-3. Commit and push changes to your GitHub repository
+### Usage
+1. Initialize PushToDocs: `npm run init`
+2. Generate documentation: `npm run generate`
+3. View your documentation: `npm run serve`
 
-## Tech Stack
+### Tech Stack
 * Node.js
-* GitHub API
-* Natural Language Processing (NLP) libraries
+* JavaScript
+* Markdown
+* Git
 
-## Contributing
-We welcome contributions to PushToDocs. To contribute, please:
+### Contributing
+We welcome contributions from the community to improve and expand PushToDocs. If you're interested in contributing, please:
 1. Fork the repository
 2. Create a new branch: `git checkout -b feature/your-feature`
-3. Commit changes: `git commit -m "your commit message"`
+3. Commit your changes: `git commit -m "your commit message"`
 4. Open a pull request
 
-## License
+### License
 PushToDocs is licensed under the MIT License. See [LICENSE](LICENSE) for details.
