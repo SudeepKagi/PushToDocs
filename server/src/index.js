@@ -18,7 +18,13 @@ app.use(
         credentials: true,
     })
 );
-app.use(express.json());
+app.use(
+    express.json({
+        verify: (req, res, buf) => {
+            req.rawBody = buf;
+        },
+    })
+);
 app.use("/health", healthRoute);
 app.use("/auth", authRoute);
 app.use("/api/github", githubRoute);

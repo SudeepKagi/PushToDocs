@@ -1,13 +1,16 @@
 import axios from "axios";
+import crypto from "crypto";
 import { decrypt } from "../utils/encryption.js";
 import ActiveRepo from "../models/ActiveRepo.js";
+import { readmeQueue } from "../config/queue.js";
 
 
-// Get authenticated user's repositories
+// ===============================
+// 🔹 Get Authenticated User Repos
+// ===============================
 export const getGithubRepos = async (req, res) => {
     try {
         const encryptedToken = req.user.encryptedGithubToken;
-
         const accessToken = decrypt(encryptedToken);
 
         const response = await axios.get(
@@ -39,6 +42,10 @@ export const getGithubRepos = async (req, res) => {
     }
 };
 
+
+// ===============================
+// 🔹 Activate Repository
+// ===============================
 export const activateRepository = async (req, res) => {
     try {
         const {
@@ -91,8 +98,65 @@ export const activateRepository = async (req, res) => {
 
         res.json({ message: "Repository activated", activeRepo });
     } catch (error) {
-        console.error("Activate repo error:", error.response?.data || error.message);
+        console.error(
+            "Activate repo error:",
+            error.response?.data || error.message
+        );
         res.status(500).json({ message: "Activation failed" });
     }
 };
 
+
+// ===============================
+// 🔹 Webhook Handler
+// ===============================
+export const handleWebhook = async (req, res) => {
+    try {
+        const signature = req.headers["x-hub-signature-256"];
+
+        if (!signature) {
+            return res.status(403).json({ message: "No signature provided" });
+        }
+
+        // 🔐 Verify GitHub signature
+        const hmac = crypto.createHmac(
+            "sha256",
+            process.env.GITHUB_WEBHOOK_SECRET
+        );
+
+        const digest =
+            "sha256=" + hmac.update(req.rawBody).digest("hex");
+
+        if (signature !== digest) {
+            return res.status(403).json({ message: "Invalid signature" });
+        }
+
+        const { repository, head_commit } = req.body;
+
+        const activeRepo = await ActiveRepo.findOne({
+            repoId: repository.id,
+            active: true,
+        });
+
+        if (!activeRepo) {
+            return res.status(200).json({ message: "Repo not activated" });
+        }
+
+        console.log("🚀 Push event received for:", repository.full_name);
+
+        // 🧠 Add job to Redis queue
+        await readmeQueue.add("generate-readme", {
+            repoId: repository.id,
+            repoFullName: repository.full_name,
+            branch: repository.default_branch,
+            lastCommitMessage: head_commit?.message || "",
+        });
+
+        console.log("📦 README generation job added to queue");
+
+        res.status(200).json({ message: "Webhook received and queued" });
+    } catch (error) {
+        console.error("Webhook error:", error.message);
+        res.status(500).json({ message: "Webhook processing failed" });
+    }
+};
