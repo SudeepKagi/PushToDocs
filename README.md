@@ -1,41 +1,36 @@
 # PushToDocs
-================
-
-## Project Title
-PushToDocs is an innovative tool designed to streamline documentation processes, making it easier for developers to maintain and update their project documentation.
-
-## Description
-PushToDocs is a cutting-edge solution that automates the generation of high-quality documentation for software projects. With its advanced features and user-friendly interface, PushToDocs aims to simplify the documentation process, saving developers time and effort.
+## Project Description
+PushToDocs is an innovative tool designed to streamline the process of generating and maintaining high-quality documentation for software projects. By automating the documentation generation process, PushToDocs aims to reduce the workload of developers and improve the overall readability and accessibility of project documentation.
 
 ## Features
-* Automatic documentation generation
-* Support for multiple programming languages
-* Customizable templates and layouts
+* Automated documentation generation
+* Support for multiple documentation formats
+* Customizable templates and styling
 * Integration with popular version control systems
-* Real-time updates and synchronization
+* User-friendly interface for easy configuration and management
 
 ## Installation
 To get started with PushToDocs, follow these steps:
 1. Clone the repository: `git clone https://github.com/SudeepKagi/PushToDocs.git`
-2. Install dependencies: `npm install` or `yarn install`
-3. Configure the tool according to your project needs
+2. Install dependencies: `npm install`
+3. Configure the tool according to your project's requirements
 
 ## Usage
-1. Initialize PushToDocs: `npx push-to-docs init`
-2. Generate documentation: `npx push-to-docs generate`
-3. Customize and refine your documentation as needed
+1. Run the documentation generator: `npm run generate-docs`
+2. Review and customize the generated documentation as needed
+3. Integrate the documentation into your project's workflow
 
 ## Tech Stack
-* Node.js
 * JavaScript
+* Node.js
 * Markdown
-* Git
+* HTML/CSS
 
 ## Contributing
-We welcome contributions to PushToDocs! If you're interested in helping us improve the tool, please:
+Contributions to PushToDocs are welcome and appreciated. To contribute, please:
 1. Fork the repository
 2. Create a new branch for your feature or bug fix
 3. Submit a pull request with a detailed description of your changes
 
 ## License
-PushToDocs is licensed under the [MIT License](https://github.com/SudeepKagi/PushToDocs/blob/main/LICENSE).
+PushToDocs is licensed under the MIT License. See [LICENSE](LICENSE) for details.
