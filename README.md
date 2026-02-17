@@ -1,24 +1,28 @@
 # PushToDocs
 =====================================
 
+## Project Title
+PushToDocs is an innovative tool designed to simplify the process of generating high-quality documentation for software projects.
+
 ## Description
-PushToDocs is an innovative tool designed to streamline the process of generating high-quality documentation for software projects. With its cutting-edge features and intuitive interface, PushToDocs aims to simplify the documentation process, making it easier for developers to focus on what matters most - building exceptional software.
+PushToDocs is a cutting-edge solution that automates the creation of professional README files, eliminating the need for manual documentation. This repository contains the source code for the PushToDocs project, which utilizes advanced algorithms to generate accurate and up-to-date documentation.
 
 ## Features
-* Automated documentation generation
+* Automated README generation
 * Support for multiple documentation formats
 * Customizable templates and styling
 * Integration with popular version control systems
-* User-friendly interface for easy navigation and configuration
 
 ## Installation
 To get started with PushToDocs, follow these steps:
 1. Clone the repository: `git clone https://github.com/SudeepKagi/PushToDocs.git`
-2. Install dependencies: `npm install` or `yarn install`
-3. Configure the tool according to your project's needs
+2. Install dependencies: `npm install`
+3. Configure the project: `npm run config`
 
 ## Usage
-PushToDocs is designed to be easy to use. Simply run the command `npm run generate-docs` or `yarn run generate-docs` to generate your project's documentation.
+1. Run the PushToDocs command: `npm run generate-docs`
+2. Specify the target repository: `--repo https://github.com/SudeepKagi/PushToDocs.git`
+3. Customize the output: `--output README.md`
 
 ## Tech Stack
 * Node.js
@@ -26,10 +30,11 @@ PushToDocs is designed to be easy to use. Simply run the command `npm run genera
 * Markdown
 
 ## Contributing
-We welcome contributions to PushToDocs! If you're interested in contributing, please:
+We welcome contributions to the PushToDocs project. To get involved, please:
 1. Fork the repository
-2. Create a new branch for your feature or bug fix
-3. Submit a pull request with a detailed description of your changes
+2. Create a new branch: `git checkout -b feature/your-feature`
+3. Commit your changes: `git commit -m "Your commit message"`
+4. Open a pull request
 
 ## License
-PushToDocs is licensed under the [MIT License](https://opensource.org/licenses/MIT).
+PushToDocs is licensed under the [MIT License](https://opensource.org/licenses/MIT). By contributing to this project, you agree to abide by the terms of the license.
