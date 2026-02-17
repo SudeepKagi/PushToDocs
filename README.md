@@ -1,44 +1,42 @@
 # PushToDocs
-=====================================
+====================================================
 
 ## Project Title
-PushToDocs is a revolutionary tool designed to streamline documentation processes, making it easier for developers to maintain and update their project documentation.
+PushToDocs is an innovative solution for automatically generating high-quality documentation.
 
 ## Description
-PushToDocs is an innovative solution that automates the generation of high-quality documentation for software projects. With its cutting-edge technology, it saves developers time and effort, ensuring that their documentation is always up-to-date and accurate.
+PushToDocs is designed to streamline the process of creating and maintaining documentation for software projects. By leveraging advanced algorithms and natural language processing, PushToDocs enables developers to focus on coding while ensuring that their projects are well-documented.
 
 ## Features
-* Automated documentation generation
-* Supports multiple programming languages
-* Customizable templates and themes
+* Automatic generation of README files
+* Support for multiple documentation formats
+* Customizable templates and styling options
 * Integration with popular version control systems
-* Real-time updates and notifications
+* Continuous documentation updates with each code commit
 
 ## Installation
-To get started with PushToDocs, follow these simple steps:
+To get started with PushToDocs, follow these steps:
 1. Clone the repository: `git clone https://github.com/SudeepKagi/PushToDocs.git`
 2. Install dependencies: `npm install`
-3. Configure your project settings: `npm run config`
+3. Configure PushToDocs according to your project needs
 
 ## Usage
-Using PushToDocs is straightforward:
-1. Initialize the documentation generator: `npm run init`
-2. Generate your documentation: `npm run generate`
-3. Review and customize your documentation as needed
+1. Initialize PushToDocs: `npx push-to-docs init`
+2. Generate documentation: `npx push-to-docs generate`
+3. Commit changes: `git add .` and `git commit -m "docs: auto generate README via PushToDoc"`
 
 ## Tech Stack
-PushToDocs is built using the following technologies:
 * Node.js
 * JavaScript
 * Markdown
-* GitHub API
+* Git
 
 ## Contributing
-We welcome contributions to PushToDocs! If you're interested in helping us improve this project, please:
+We welcome contributions to PushToDocs. To contribute, please:
 1. Fork the repository
-2. Create a new branch: `git checkout -b your-branch-name`
-3. Make your changes and commit: `git commit -m "your-commit-message"`
-4. Open a pull request against the main branch
+2. Create a new branch: `git checkout -b feature/your-feature`
+3. Make changes and commit: `git commit -m "your commit message"`
+4. Open a pull request
 
 ## License
-PushToDocs is licensed under the [MIT License](https://opensource.org/licenses/MIT).
+PushToDocs is licensed under the MIT License. See [LICENSE](LICENSE) for details.
