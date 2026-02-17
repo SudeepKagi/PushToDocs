@@ -118,7 +118,6 @@ export const handleWebhook = async (req, res) => {
             return res.status(403).json({ message: "No signature provided" });
         }
 
-        // 🔐 Verify GitHub signature
         const hmac = crypto.createHmac(
             "sha256",
             process.env.GITHUB_WEBHOOK_SECRET
@@ -133,6 +132,23 @@ export const handleWebhook = async (req, res) => {
 
         const { repository, head_commit } = req.body;
 
+        if (!repository) {
+            return res.status(200).json({ message: "No repository data" });
+        }
+
+        const commitMessage = head_commit?.message || "";
+        const commitAuthor = head_commit?.author?.name || "";
+
+        console.log("📩 Incoming commit:", commitMessage);
+
+        // 🚨 STRICT recursion guard
+        if (
+            commitMessage.startsWith("docs: auto generate README via PushToDoc")
+        ) {
+            console.log("🛑 Ignoring PushToDoc auto-commit");
+            return res.status(200).json({ message: "Ignored auto commit" });
+        }
+
         const activeRepo = await ActiveRepo.findOne({
             repoId: repository.id,
             active: true,
@@ -144,12 +160,11 @@ export const handleWebhook = async (req, res) => {
 
         console.log("🚀 Push event received for:", repository.full_name);
 
-        // 🧠 Add job to Redis queue
         await readmeQueue.add("generate-readme", {
             repoId: repository.id,
             repoFullName: repository.full_name,
             branch: repository.default_branch,
-            lastCommitMessage: head_commit?.message || "",
+            lastCommitMessage: commitMessage,
         });
 
         console.log("📦 README generation job added to queue");
