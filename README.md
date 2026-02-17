@@ -1,43 +1,40 @@
 # PushToDocs
-## Automated Documentation Generator
+## Project Title
+PushToDocs is an innovative tool designed to streamline documentation generation for software projects, enhancing collaboration and productivity among developers.
 
-PushToDocs is a innovative tool designed to simplify the process of generating and maintaining high-quality documentation for software projects. With its cutting-edge technology, PushToDocs streamlines the documentation process, saving developers time and effort.
+## Description
+PushToDocs is a cutting-edge solution that automates the process of creating and updating documentation, ensuring that project knowledge is always up-to-date and easily accessible. This repository contains the source code for the PushToDocs project, which leverages advanced technologies to simplify the documentation process.
 
-### Description
-PushToDocs is an automated documentation generator that utilizes AI-powered algorithms to create professional-grade documentation for software projects. Its advanced features and intuitive interface make it an ideal solution for developers seeking to improve their project's documentation.
-
-### Features
+## Features
 * Automated documentation generation
-* Support for multiple programming languages
-* Customizable documentation templates
 * Integration with popular version control systems
-* Real-time documentation updates
+* Customizable documentation templates
+* Support for multiple output formats
+* Collaborative editing capabilities
 
-### Installation
+## Installation
 To get started with PushToDocs, follow these steps:
 1. Clone the repository: `git clone https://github.com/SudeepKagi/PushToDocs.git`
 2. Install dependencies: `npm install`
-3. Configure the tool: `npm run configure`
+3. Configure the project: `npm run config`
 
-### Usage
-To generate documentation using PushToDocs, simply run the following command:
-```bash
-npm run generate-docs
-```
-This will create a comprehensive documentation set for your project.
+## Usage
+1. Initialize the documentation generation process: `npm run generate-docs`
+2. Customize the documentation template: `npm run customize-template`
+3. Integrate with your version control system: `npm run integrate-vcs`
 
-### Tech Stack
-* Node.js
-* JavaScript
-* Markdown
-* GitHub API
+## Tech Stack
+* Frontend: JavaScript, HTML, CSS
+* Backend: Node.js, Express.js
+* Database: MongoDB
+* APIs: RESTful API
 
-### Contributing
-We welcome contributions to PushToDocs. To contribute, please:
+## Contributing
+We welcome contributions to the PushToDocs project. To contribute, please:
 1. Fork the repository
-2. Create a new branch: `git checkout -b feature/new-feature`
-3. Make changes and commit: `git commit -m "docs: new feature"`
+2. Create a new branch: `git checkout -b feature/your-feature`
+3. Commit your changes: `git commit -m "your commit message"`
 4. Open a pull request
 
-### License
-PushToDocs is licensed under the MIT License. See [LICENSE](LICENSE) for details.
+## License
+PushToDocs is licensed under the [MIT License](https://opensource.org/licenses/MIT). By contributing to this project, you agree to abide by the terms of the license.
