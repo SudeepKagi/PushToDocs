@@ -1,40 +1,35 @@
 # PushToDocs
-## Project Title
-PushToDocs is an innovative tool designed to automate the process of generating high-quality documentation for software projects.
+=====================================
 
 ## Description
-PushToDocs is a cutting-edge solution that simplifies the documentation process, saving developers time and effort. With its advanced features and user-friendly interface, PushToDocs is the perfect choice for projects of all sizes.
+PushToDocs is a revolutionary tool designed to streamline the process of generating high-quality documentation for software projects. With its cutting-edge technology, PushToDocs automates the documentation process, saving developers time and effort.
 
 ## Features
-* Automated documentation generation
-* Support for multiple programming languages
-* Customizable templates and styles
+* Automatic generation of README files
+* Support for multiple documentation formats
+* Customizable templates and layouts
 * Integration with popular version control systems
-* Real-time collaboration and feedback
+* User-friendly interface for easy configuration
 
 ## Installation
 To get started with PushToDocs, follow these steps:
 1. Clone the repository: `git clone https://github.com/SudeepKagi/PushToDocs.git`
 2. Install dependencies: `npm install`
-3. Configure the tool: `npm run config`
+3. Configure the tool according to your needs
 
 ## Usage
-1. Initialize the documentation process: `npm run init`
-2. Generate documentation: `npm run generate`
-3. Review and customize the output: `npm run review`
+PushToDocs is designed to be easy to use. Simply run the command `node index.js` to generate your documentation. You can also customize the output by passing options and flags.
 
 ## Tech Stack
 * Node.js
 * JavaScript
 * Markdown
-* GitHub API
 
 ## Contributing
-We welcome contributions from the community. To contribute, please:
+We welcome contributions to PushToDocs. If you're interested in contributing, please:
 1. Fork the repository
-2. Create a new branch: `git checkout -b feature/your-feature`
-3. Make changes and commit: `git commit -m "your commit message"`
-4. Open a pull request
+2. Create a new branch for your feature or bug fix
+3. Submit a pull request with a detailed description of your changes
 
 ## License
 PushToDocs is licensed under the MIT License. See [LICENSE](LICENSE) for details.
