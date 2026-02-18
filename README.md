@@ -50,4 +50,4 @@ We welcome contributions to PushToDocs. To contribute, please:
 
 ## License
 
-PushToDocs is licensed under the MIT License. See [LICENSE](LICENSE) for details...
+PushToDocs is licensed under the MIT License. See [LICENSE](LICENSE) for details.
