@@ -118,6 +118,11 @@ export const handleWebhook = async (req, res) => {
             return res.status(403).json({ message: "No signature provided" });
         }
 
+        if (!head_commit || head_commit.author?.name === "PushToDoc Bot") {
+            console.log("🤖 Ignoring bot commit");
+            return res.status(200).json({ message: "Bot commit ignored" });
+        }
+
         const hmac = crypto.createHmac(
             "sha256",
             process.env.GITHUB_WEBHOOK_SECRET
