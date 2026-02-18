@@ -118,11 +118,7 @@ export const handleWebhook = async (req, res) => {
             return res.status(403).json({ message: "No signature provided" });
         }
 
-        if (!head_commit || head_commit.author?.name === "PushToDoc Bot") {
-            console.log("🤖 Ignoring bot commit");
-            return res.status(200).json({ message: "Bot commit ignored" });
-        }
-
+        // 🔐 Verify GitHub signature FIRST
         const hmac = crypto.createHmac(
             "sha256",
             process.env.GITHUB_WEBHOOK_SECRET
@@ -137,21 +133,29 @@ export const handleWebhook = async (req, res) => {
 
         const { repository, head_commit } = req.body;
 
-        if (!repository) {
-            return res.status(200).json({ message: "No repository data" });
+        if (!repository || !head_commit) {
+            return res.status(200).json({ message: "No commit data" });
         }
 
-        const commitMessage = head_commit?.message || "";
-        const commitAuthor = head_commit?.author?.name || "";
+        const commitMessage = head_commit.message || "";
+        const commitAuthor = head_commit.author?.name || "";
 
         console.log("📩 Incoming commit:", commitMessage);
 
-        // 🚨 STRICT recursion guard
+        // 🚫 Ignore PushToDoc bot commits (author-based guard)
+        if (commitAuthor === "PushToDoc Bot") {
+            console.log("🤖 Ignoring bot commit");
+            return res.status(200).json({ message: "Bot commit ignored" });
+        }
+
+        // 🚫 Extra safety (message-based guard)
         if (
-            commitMessage.startsWith("docs: auto generate README via PushToDoc")
+            commitMessage.startsWith(
+                "docs: auto generate README via PushToDoc"
+            )
         ) {
-            console.log("🛑 Ignoring PushToDoc auto-commit");
-            return res.status(200).json({ message: "Ignored auto commit" });
+            console.log("🛑 Ignoring auto-generated README commit");
+            return res.status(200).json({ message: "Auto commit ignored" });
         }
 
         const activeRepo = await ActiveRepo.findOne({
@@ -174,9 +178,13 @@ export const handleWebhook = async (req, res) => {
 
         console.log("📦 README generation job added to queue");
 
-        res.status(200).json({ message: "Webhook received and queued" });
+        return res.status(200).json({
+            message: "Webhook received and queued",
+        });
     } catch (error) {
         console.error("Webhook error:", error.message);
-        res.status(500).json({ message: "Webhook processing failed" });
+        return res.status(500).json({
+            message: "Webhook processing failed",
+        });
     }
 };
